@@ -260,13 +260,15 @@
 #include <stdio.h>
 
 int main(void) {
-    float matriz[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    float matriz[3][3], media, soma = 0;;
     int qtd = 0;
-    float media, soma = 0;
+
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 3; j++) {
+            printf("Digite um número para posição %d-%d: ", i, j);
+            scanf("%f", &matriz[i][j]);
+        }
+    }
 
     printf("\n");
 
