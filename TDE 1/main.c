@@ -260,7 +260,7 @@
 #include <stdio.h>
 
 int main(void) {
-    float matriz[3][3], media, soma = 0;;
+    float matriz[3][3], media, soma = 0;
     int qtd = 0;
 
     for(int i = 0; i < 3; i++) {
