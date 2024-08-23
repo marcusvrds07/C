@@ -106,16 +106,26 @@
 // #include <stdio.h> 
 
 // int main(void) {
-//     int matriz[4][2], transposta[2][4], resultado[4][2];
+//     int     matriz[4][2], 
+//         transposta[2][4], 
+//          resultado[4][4] = {{0}};
 
 //     for(int i = 0; i < 4; i++) {
 //         for(int j = 0; j < 2; j++) {
-//             printf("Digite um número para a Matriz #%dx%d:", i, j);
+//             printf("Digite um número para a Matriz 4x2 #%dx%d:", i, j);
 //             scanf("%d", &matriz[i][j]);
-//             printf("Digite um número para a Matriz Transposta #%dx%d:", j, i);
-//             scanf("%d", &transposta[j][i]);
 //         }
 //     }
+
+//     printf("\n\n");
+
+//     for(int i = 0; i < 2; i++) {
+//         for(int j = 0; j < 4; j++) {
+//             printf("Digite um número para a Matriz 2x4 #%dx%d:", i, j);
+//             scanf("%d", &transposta[i][j]);
+//         }
+//     }
+    
 //     printf("\nMatriz 4x2:\n\n");
 
 //     for(int i = 0; i < 4; i++) {
@@ -125,24 +135,33 @@
 //         printf("\n");
 //     }
 
-//         printf("\nMatriz Transposta:\n\n");
+//         printf("\nMatriz 2x4:\n\n");
 
 //     for(int i = 0; i < 2; i++) {
 //         for(int j = 0; j < 4; j++) {
-//             printf("#%d-%d = %d ", j, i, transposta[i][j]);
+//             printf("#%d-%d = %d ", i, j, transposta[i][j]);
 //         }
 //         printf("\n");
 //     }
 
-//         printf("\nMatriz Transposta + Matriz Normal:\n\n");
+//         printf("\nMatriz 2x4 x Matriz 4x2:\n\n");
 
 //     for(int i = 0; i < 4; i++) {
-//         for(int j = 0; j < 2; j++) {
-//             resultado[i][j] = matriz[i][j] * transposta[j][i];
-//             printf("%d x %d = %d     ", matriz[i][j], transposta[j][i], resultado[i][j]);
+//         for(int j = 0; j < 4; j++) {
+//             for(int k = 0; k < 2; k++) {
+//                 resultado[i][j] = resultado[i][j] + matriz[i][k] * transposta[k][j];
+//             }
+//         }
+//     }
+
+//     for(int i = 0; i < 4; i++) {
+//         for(int j = 0; j < 4; j++) {
+//             printf("%d ", resultado[i][j]);
 //         }
 //         printf("\n");
 //     }
+
+//     printf("\n");
 
 //     return 0;
 // }
@@ -257,43 +276,45 @@
 
 //Exercicio 8
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(void) {
-    float matriz[3][3], media, soma = 0;
-    int qtd = 0;
+// int main(void) {
+//     float matriz[3][3], media, soma = 0;
+//     int qtd = 0;
 
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            printf("Digite um número para posição %d-%d: ", i, j);
-            scanf("%f", &matriz[i][j]);
-        }
-    }
+//     for(int i = 0; i < 3; i++) {
+//         for(int j = 0; j < 3; j++) {
+//             printf("Digite um número para posição %d-%d: ", i, j);
+//             scanf("%f", &matriz[i][j]);
+//         }
+//     }
 
-    printf("\n");
+//     printf("\n");
 
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            if((i + j) > 2) {
-                printf("( %.0f ) ", matriz[i][j]);
-                soma += matriz[i][j];
-                qtd++;  
-            }
-            else {
-                if((i + j) == 2) {
-                    printf("(%.0f-S) ", matriz[i][j]);
-                }
-                else {
-                    printf("( * ) ");
-                }
-            } 
-        }
-        printf("\n");
-    }
+//     for(int i = 0; i < 3; i++) {
+//         for(int j = 0; j < 3; j++) {
+//             if((i + j) > 2) {
+//                 printf("( %.0f ) ", matriz[i][j]);
+//                 soma += matriz[i][j];
+//                 qtd++;  
+//             }
+//             else {
+//                 if((i + j) == 2) {
+//                     printf("(%.0f-S) ", matriz[i][j]);
+//                 }
+//                 else {
+//                     printf("( * ) ");
+//                 }
+//             } 
+//         }
+//         printf("\n");
+//     }
 
-    media = soma / qtd;
+//     media = soma / qtd;
 
-    printf("\nA media é %.2f", media); 
+//     printf("\nA media é %.2f", media); 
 
-    return 0;
-}
+//     return 0;
+// }
+
+//Exercicio 9
