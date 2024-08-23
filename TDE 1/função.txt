@@ -6,3 +6,11 @@ sintaxe de definição:
     <bloco de comandos>
     return <informação>;
 }
+
+tipo = float, int, char...
+parametros = aos dados de entrada.
+
+Identificador segue as mesmas regras das variaveis
+
+Parametros de entrada: nenhum, um ou vários
+
