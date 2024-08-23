@@ -71,6 +71,7 @@
 //         for(int j = 0; j < 2; j++) {
 //             printf("Digite um número para %dx%d:", i, j);
 //             scanf("%d", &matriz[i][j]);
+//             transposta[j][i] = matriz[i][j];
 //         }
 //     }
 
@@ -83,15 +84,9 @@
 //         printf("\n");
 //     }
 
-//     for(int i = 0; i < 2; i++) {
-//         for(int j = 0; j < 5; j++) {
-//             transposta[i][j] = matriz[j][i];
-//         }
-//     }
-
 //     printf("\nMatriz Transposta:\n\n");
 
-//         for(int i = 0; i < 2; i++) {
+//     for(int i = 0; i < 2; i++) {
 //         for(int j = 0; j < 5; j++) {
 //             printf("%d ", transposta[i][j]);
 //         }
@@ -318,3 +313,4 @@
 // }
 
 //Exercicio 9
+

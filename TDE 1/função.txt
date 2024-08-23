@@ -1,0 +1,8 @@
+AULA SOBRE FUNÇÕES
+
+sintaxe de definição:
+
+<tipo> <nome_da_função> (<parâmetros>) {
+    <bloco de comandos>
+    return <informação>;
+}
