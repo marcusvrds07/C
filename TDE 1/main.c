@@ -604,3 +604,227 @@
 // }
 
 //Exercicio 16
+
+// #include<stdio.h>
+
+// void contar_vogais (char *str, int *numCaracteres);
+
+// int main()
+// {
+//     char frase[101];
+//     int numCaracteres = 0;
+//     printf("Digite uma frase ou palavra de até 100 caractere: ");
+//     fgets(frase, sizeof(frase), stdin);
+    
+//     contar_vogais(frase, &numCaracteres);
+    
+//     printf("A frase tem %d caracteres", numCaracteres);
+//     return 0;
+// }
+
+// void contar_vogais (char *str, int *numCaracteres) {
+//     int qtd = 0;
+//     for(int i = 0; *(str + i) != '\n'; i++) {
+//         qtd++;
+//     }
+//     *numCaracteres = qtd;
+// }
+
+//Exercicio 17
+
+// #include <stdio.h>
+// #include <math.h>
+
+// void calcular_hexagono(float l, float *area, float *perimetro);
+
+// int main(void) {
+//     float l, area, perimetro;
+    
+//     printf("Digite o valor do lado do hexágono: ");
+//     scanf("%f", &l);
+    
+//     calcular_hexagono(l, &area, &perimetro);
+    
+//     printf("O perimetro do hexágono regular é %.2f e a area é %.2f", perimetro, area);
+//     return 0;
+// }
+
+// void calcular_hexagono(float l, float *area, float *perimetro) {
+//     *perimetro = 6 * l;
+//     *area = (3 * (l * l) * sqrt(3)) / 2;
+// }
+
+//Exercicio 18
+
+// #include <stdio.h>
+// #include <string.h>
+
+// char validarSituacao(float p1, float p2, float p3, int faltas, int aulas, float *media);
+
+// int main(void) {
+//     int faltas, aulas;
+//     float media, p1, p2, p3;
+//     char disciplina[50], situacao[50];
+
+//     printf("Digite o nome da disciplina: ");
+//     scanf(" %19[^\n]s", disciplina);
+
+//     printf("Digite suas notas de %s da seguinte forma: (p1-p2-p3)", disciplina);
+//     scanf("%f-%f-%f", &p1, &p2, &p3);
+
+//     printf("Digite a quantidade total de aulas que você tem em %s: ", disciplina);
+//     scanf("%d", &aulas);
+
+//     printf("Digite a quantidade de faltas que você teve em %s: ", disciplina);
+//     scanf("%d", &faltas);
+
+//     char situacaoChar = validarSituacao(p1, p2, p3, faltas, aulas, &media);
+    
+//     switch (situacaoChar)
+//     {
+//     case 'A':
+//         strcpy(situacao, "Aprovado");
+//     break;
+//     case 'R':
+//         strcpy(situacao, "Reprovado");
+//     break;
+//     case 'F':
+//         strcpy(situacao, "Reprovado por falta");
+//     break;
+//     default:
+//         strcpy(situacao, "undefined");
+//     break;
+//     }
+
+//     printf("A sua media foi %.1f e a sua situação é %s", media, situacao);
+
+//     return 0;
+// }
+
+// char validarSituacao(float p1, float p2, float p3, int faltas, int aulas, float *media) {
+//     char situacao;
+//     float soma = p1 + p2 + p3;
+//     *media = soma / 3;
+//     float percentAula = (100 / aulas) * faltas;
+
+//     if(*media >= 6  && percentAula < 25) {
+//         situacao = 'A';
+//     }
+//     else if(*media < 6 && percentAula < 25) {
+//         situacao = 'R';
+//     }
+//     else {
+//         situacao = 'F';
+//     }
+
+//     return situacao;
+// }
+
+// Exercicio 19
+
+// #include <stdio.h>
+
+// int verificar_pares(int *v);
+
+// int main(void) {
+//     int vetor[6];
+
+//     for(int i = 0; i < 6; i ++) {
+//         printf("Digite o numero %d do vetor: ", i + 1);
+//         scanf("%d", &vetor[i]);
+//     }
+//     int qtdPares = verificar_pares(vetor);
+
+//     printf("A quantidade de números pares é %d", qtdPares);
+
+//     return 0;
+// }
+
+// int verificar_pares (int *v) {
+// int qtd = 0;
+//     for(int i = 0; i < 6; i++) {
+//         if(*(v + i) % 2 == 0) {
+//             qtd++;
+//         }
+//     }
+//     return qtd;
+// }
+
+//Exercicio 20
+
+// #include <stdio.h>
+
+// int inverter_vetor(int *v1, int *v2, int n);
+
+// int main(void) {
+//     int n;
+//     printf("Digite a quantidade de números que vai ter em cada vetor: ");
+//     scanf("%d", &n);
+
+//     int vetor1[n], vetor2[n];
+
+//     for(int i = 0; i < n; i++) {
+//         printf("Digite o número que vai ocupar a posição %d do vetor1: ", i);
+//         scanf("%d", &vetor1[i]);
+//     }
+
+//     int maiorV1 = inverter_vetor(vetor1, vetor2, n);
+
+//     for(int i = 0; i < n; i++) {
+//         printf("%d %d\n", vetor1[i], vetor2[i]);
+//     }
+
+//     printf("O maior número do vetor1 é %d", maiorV1);
+//     return 0;
+// }
+
+// int inverter_vetor(int *v1, int *v2, int n) {
+//     int maior;
+//     for(int i = 0; i < n; i++) {
+//         *(v2 + i) = *(v1 + (n - 1 - i));
+//         if(*(v1 + i) > maior || i == 0) {
+//             maior = *(v1 + i);
+//         }
+//     }
+//     return maior;
+// }
+
+
+//Exercicio 21
+
+// #include <stdio.h>
+
+// void multiplicar_escalar(int *v1, int *v2, int x, int n);
+
+// int main(void) {
+//     int n;
+//     printf("Digite a quantidade de números que vai ter em cada vetor: ");
+//     scanf("%d", &n);
+
+//     int v1[n], v2[n];
+//     int x;
+
+//     for(int i = 0; i < n; i++) {
+//         printf("Digite o número que vai ocupar a posição %d do vetor1: ", i);
+//         scanf("%d", &v1[i]);
+//     }
+
+//     printf("Digite o valor de x: ");
+//     scanf("%d", &x);
+
+//     multiplicar_escalar(v1, v2, x, n);
+
+//     for(int i = 0; i < n; i++) {
+//         printf("%d * %d = %d\n", *(v1 + i), x, *(v2 + i));
+//     }
+
+//     return 0;
+// }
+
+// void multiplicar_escalar(int *v1, int *v2, int x, int n) {
+//     for(int i = 0; i < n; i++) {
+//         *(v2 + i) = *(v1 + i) * x;
+//     }
+// }
+
+//Exercicio 22
