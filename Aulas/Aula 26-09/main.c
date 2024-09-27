@@ -98,6 +98,7 @@ int main(void) {
         printf("%c ", vetor[i]);
     }
 
+    free(vetor);
     return 0;
 }
 
