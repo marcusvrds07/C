@@ -793,15 +793,22 @@
 //Exercicio 21
 
 // #include <stdio.h>
+// #include <stdlib.h>
 
 // void multiplicar_escalar(int *v1, int *v2, int x, int n);
 
 // int main(void) {
-//     int n;
+//     int n, *v1, *v2;
 //     printf("Digite a quantidade de números que vai ter em cada vetor: ");
 //     scanf("%d", &n);
 
-//     int v1[n], v2[n];
+//     v1 = (int*) malloc(n * sizeof(int));
+//     v2 = (int*) malloc(n * sizeof(int));
+
+//     if(v1 == NULL || v2 == NULL) {
+//         printf("Error");
+//         return 1;
+//     }
 //     int x;
 
 //     for(int i = 0; i < n; i++) {
@@ -818,6 +825,8 @@
 //         printf("%d * %d = %d\n", *(v1 + i), x, *(v2 + i));
 //     }
 
+//     free(v1);
+//     free(v2);
 //     return 0;
 // }
 
@@ -828,3 +837,171 @@
 // }
 
 //Exercicio 22
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main(void) {
+//     int *vetor, soma = 0;
+
+//     vetor = (int*) malloc(5 * sizeof(int));
+//     if(vetor == NULL) {
+//         printf("Error");
+//         return 1;
+//     }
+
+//     for(int i = 0; i < 5; i++) {
+//         printf("Preencha o vetor digitando um número: ");
+//         scanf("%d", &*(vetor + i));
+
+//         soma += *(vetor + i);
+//     }
+
+//     printf("%d", soma);
+
+//     free(vetor);
+//     return 0;
+// }
+
+//Exercicio 23
+
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main(void) {
+//     int N;
+//     int *array;
+//     int *arrayCopy;
+
+//     printf("Digite o tamanho de um array de inteiros: ");
+//     scanf("%d", &N);
+
+//     array = (int*) malloc(N * sizeof(int));
+//     arrayCopy = (int*) malloc(N * sizeof(int));
+
+//     if(array == NULL || arrayCopy == NULL) {
+//         printf("Error");
+//         return 1;
+//     }
+
+//     for(int i = 0; i < N; i++) {
+//         printf("Digite um número: ");
+//         scanf("%d", &*(array + i));
+
+//         *(arrayCopy + i) = *(array + i);
+//     }
+
+//         for(int i = 0; i < N; i++) {
+//             printf("%d ", *(arrayCopy + i));
+//         }
+
+//         free(array);
+//         free(arrayCopy);
+//     return 0;
+// }
+
+//Exercicio 24
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <stdbool.h>
+
+
+// int main(void) {
+//     int n, pos;
+//     int *array;
+//     bool valid = false;
+
+//     printf("Digite um tamanho pro array: ");
+//     scanf("%d", &n);
+
+//     array = (int*) malloc(n * sizeof(int));
+//     if(array == NULL) {
+//         printf("Error");
+//         return 1;
+//     }
+
+//     for(int i = 0; i < n; i++) {
+//         printf("Digite um número: ");
+//         scanf("%d", &*(array + i));
+//     }
+
+//     printf("\nARRAY ORIGINAL\n");
+
+//         for(int i = 0; i < n; i++) {
+//             printf("%d ", *(array + i));
+//         }
+//     do {
+//         printf("\n\nEscolha uma posição pra retirar: ");
+//         scanf("%d", &pos);
+//         if (pos >= 0 && pos < n) {
+//             valid = true;
+//         }
+//     } while(valid == false);
+
+//     for(int i = pos; i < n - 1; i++) {
+//         *(array + i) = *(array + (i + 1));
+//     }
+
+//     array = (int*) realloc(array, (n - 1) * sizeof(int));
+
+//     printf("\nNEW ARRAY\n");
+
+//     for(int i = 0; i < n - 1; i++) {
+//         printf("%d ", *(array + i));
+//     }
+
+//     free(array);
+//     return 0;
+// }
+
+//Exercicio 25
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(void) {
+    int **matriz;
+    int linha = 3, coluna = 3;
+    int escalar;
+
+    matriz = (int**) malloc(linha * sizeof(int*));
+    if(matriz == NULL) {
+        printf("Error");
+        return 0;
+    }
+
+    for(int i = 0; i < 3; i++) {
+        matriz[i] = (int*) malloc (coluna * sizeof(int));
+        if(matriz[i] == NULL) {
+            printf("Error");
+            return 1;
+        }
+    }   
+
+    printf("Digite um escalar: ");
+    scanf("%d", &escalar);
+
+    for(int i = 0; i < linha; i++) {
+        for(int j = 0; j < coluna; j++) {
+            printf("Digite um número: ");
+            scanf("%d", &matriz[i][j]);
+            matriz[i][j] *= escalar;
+        }
+    }
+
+        for(int i = 0; i < linha; i++) {
+            for(int j = 0; j < coluna; j++) {
+                printf("%d ", matriz[i][j]);
+            }
+            printf("\n");
+        }
+
+    for(int i = 0 ; i < linha; i++) {
+        free(matriz[i]);
+    }
+    free(matriz);
+
+    return 0;
+}
