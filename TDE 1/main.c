@@ -605,7 +605,7 @@
 
 //Exercicio 16
 
-// #include<stdio.h>
+#include<stdio.h>
 
 // void contar_vogais (char *str, int *numCaracteres);
 
@@ -615,17 +615,19 @@
 //     int numCaracteres = 0;
 //     printf("Digite uma frase ou palavra de até 100 caractere: ");
 //     fgets(frase, sizeof(frase), stdin);
-    
+
 //     contar_vogais(frase, &numCaracteres);
-    
-//     printf("A frase tem %d caracteres", numCaracteres);
+
+//     printf("A frase tem %d vogais", numCaracteres);
 //     return 0;
 // }
 
 // void contar_vogais (char *str, int *numCaracteres) {
 //     int qtd = 0;
 //     for(int i = 0; *(str + i) != '\n'; i++) {
-//         qtd++;
+//      if(*(str + i) == 'a' || *(str + i) == 'e' || *(str + i) == 'i' || *(str + i) == 'o' || *(str + i) == 'u') {
+//          qtd++;
+//      }
 //     }
 //     *numCaracteres = qtd;
 // }
