@@ -507,7 +507,7 @@
 // #include <stdbool.h>
 
 // float somar(float num1, float num2, float num3);
-// float media(float resultado);
+// float media(float num1, float num2, float num3);
 
 // int main(void) {
 //     float num1, num2, num3;
@@ -526,7 +526,7 @@
 //         }
 //     } while(valid == false);
 
-//     float resultado = media(somar(num1, num2, num3));
+//     float resultado = media(num1, num2, num3);
 //     printf("Resultado = %.2f", resultado);
 
 //     return 0;
@@ -536,8 +536,9 @@
 //     return num1 + num2 + num3;
 // }
 
-// float media(float resultado) {
-//     return resultado / 3;
+// float media(float num1, float num2, float num3) {
+//     float soma = somar(num1, num2, num3);
+//     return soma / 3;
 // }
 
 //Exercicio 14
@@ -546,7 +547,7 @@
 // #include <stdbool.h>
 
 // int pontosTotais(int vitorias, int empates);
-// float media(float resultado, int jogosTotais);
+// float media(int vitorias, int empates, int jogosTotais);
 
 // int main(void) {
 //     int vitorias, empates, derrotas, jogosTotais;
@@ -566,22 +567,25 @@
 
 
 //     } while(valid == false);
-    
+
 //     jogosTotais = vitorias + empates + derrotas;
 //     float total = pontosTotais(vitorias, empates);
-//     float mediaFinal = media(total, jogosTotais);
+//     float mediaFinal = media(vitorias, empates, jogosTotais);
 
-//     printf("\n\nEm %d jogos o seu time fez %d pontos, tendo uma média de %.2f pontos por partida.\n\n", jogosTotais, total, mediaFinal);
+//     printf("\n\nEm %d jogos o seu time fez %.2f pontos, tendo uma média de %.2f pontos por partida.\n\n", jogosTotais, total, mediaFinal);
 
 //     return 0;
 // }
 
 // int pontosTotais(int vitorias, int empates) {
-//     return (vitorias * 3) + empates;
+//     float pontos = (vitorias * 3) + empates;
+//     return pontos;
 // }
-// float media(float resultado, int jogosTotais) {
-//     return resultado / jogosTotais;
+// float media(int vitorias, int empates, int jogosTotais) {
+//     float pontos = pontosTotais(vitorias, empates);
+//     return pontos / jogosTotais;
 // }
+
 
 //Exercicio 15
 
@@ -605,7 +609,7 @@
 
 //Exercicio 16
 
-#include<stdio.h>
+// #include<stdio.h>
 
 // void contar_vogais (char *str, int *numCaracteres);
 
@@ -959,51 +963,51 @@
 
 //Exercicio 25
 
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
 
-int main(void) {
-    int **matriz;
-    int linha = 3, coluna = 3;
-    int escalar;
+// int main(void) {
+//     int **matriz;
+//     int linha = 3, coluna = 3;
+//     int escalar;
 
-    matriz = (int**) malloc(linha * sizeof(int*));
-    if(matriz == NULL) {
-        printf("Error");
-        return 0;
-    }
+//     matriz = (int**) malloc(linha * sizeof(int*));
+//     if(matriz == NULL) {
+//         printf("Error");
+//         return 0;
+//     }
 
-    for(int i = 0; i < 3; i++) {
-        matriz[i] = (int*) malloc (coluna * sizeof(int));
-        if(matriz[i] == NULL) {
-            printf("Error");
-            return 1;
-        }
-    }   
+//     for(int i = 0; i < 3; i++) {
+//         matriz[i] = (int*) malloc (coluna * sizeof(int));
+//         if(matriz[i] == NULL) {
+//             printf("Error");
+//             return 1;
+//         }
+//     }   
 
-    printf("Digite um escalar: ");
-    scanf("%d", &escalar);
+//     printf("Digite um escalar: ");
+//     scanf("%d", &escalar);
 
-    for(int i = 0; i < linha; i++) {
-        for(int j = 0; j < coluna; j++) {
-            printf("Digite um número: ");
-            scanf("%d", &matriz[i][j]);
-            matriz[i][j] *= escalar;
-        }
-    }
+//     for(int i = 0; i < linha; i++) {
+//         for(int j = 0; j < coluna; j++) {
+//             printf("Digite um número: ");
+//             scanf("%d", &matriz[i][j]);
+//             matriz[i][j] *= escalar;
+//         }
+//     }
 
-        for(int i = 0; i < linha; i++) {
-            for(int j = 0; j < coluna; j++) {
-                printf("%d ", matriz[i][j]);
-            }
-            printf("\n");
-        }
+//         for(int i = 0; i < linha; i++) {
+//             for(int j = 0; j < coluna; j++) {
+//                 printf("%d ", matriz[i][j]);
+//             }
+//             printf("\n");
+//         }
 
-    for(int i = 0 ; i < linha; i++) {
-        free(matriz[i]);
-    }
-    free(matriz);
+//     for(int i = 0 ; i < linha; i++) {
+//         free(matriz[i]);
+//     }
+//     free(matriz);
 
-    return 0;
-}
+//     return 0;
+// }
